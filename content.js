@@ -3,17 +3,19 @@
  */
 function getIDs()
 {
-    var inputs, idlist;
+    var inputs
+    var idList;
 
-    inputs = document.getElementsByTagName("input");
-    idlist = window.location.hostname + ":";
+    inputs = document.getElementsByTagName("input[type=text]");
+    idList = window.location.hostname + ":";
 
     for(var i = 0; i < inputs.length; i++)
     {
-        idList = idlist + "," + inputs[i].id;
+        idList = idList + "," + inputs[i].id;
     }
 
-    return idlist;
+    console.log("test " +idList);
+    return idList;
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {

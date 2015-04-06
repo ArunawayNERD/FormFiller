@@ -26,8 +26,9 @@ function getIDs()
 function storeIDs(IDList)
 {
     IDList.split(",").join(',;');
+    console.log(IDList);
 
-    chrome.stroage.sync.set({"temp" : IDList}, function (){ });
+    chrome.stroage.sync.set({"temp" : IDList}, function (){});
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendresponce){
